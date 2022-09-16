@@ -193,3 +193,20 @@ void transfer_money()
 }
 
 //!---------------------------------------------------------
+void checkDetail()
+{
+    printf("ACCOUNT DETAILS\n");
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+
+    printf("\nName : %s\n", name);
+    printf("Account No. : %d\n", acc_no);
+    printf("Total balance = %d\n ", amt);
+    printf("\n%d transactions have been made from your account \n", count);
+    printf("Press any key.....");
+    getch();
+}
+
+//!---------------------------------------------------------
