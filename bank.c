@@ -16,3 +16,10 @@ void checkDetail();
 void LastDetail();
 void transaction_details();
 void menu();
+void divider()
+{
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+}
