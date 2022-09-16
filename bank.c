@@ -94,3 +94,31 @@ void menu()
     printf("6.Exit\n");
     divider();
 }
+//!---------------------------------------------------------
+void deposit_money()
+{
+
+    time_t tm;
+    time(&tm);
+    FILE *ptr = fopen("Account.txt", "a");
+    printf("*****DEPOSITING MONEY*****\n");
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+
+    printf("\nEnter the amount you want to deposit\n");
+    scanf("%d", &dip_amt);
+    amt += dip_amt;
+    printf("****Money Deposited****\n");
+    printf("Now balance : %d\n", amt);
+    fprintf(ptr, "\nRs%d had been deposited to your account \n", dip_amt);
+    fprintf(ptr, "Date/Time of transaction :  %s\n", ctime(&tm));
+    count++;
+
+    fclose(ptr);
+    printf("Press any key....\n");
+    getch();
+}
+
+//!---------------------------------------------------------
