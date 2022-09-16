@@ -238,3 +238,19 @@ void transaction_details()
 
     getch();
 }
+//!---------------------------------------------------------
+
+void LastDetail()
+{
+    printf("ACCOUNT DETAILS\n");
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+    printf("\nName : %s\n", name);
+    printf("Account No. : %d\n", acc_no);
+    printf("Total balance = %d\n ", amt);
+
+    printf("\n\nPress any key to exit.....");
+    getch();
+}
