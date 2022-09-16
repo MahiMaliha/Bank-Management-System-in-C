@@ -155,3 +155,41 @@ void withdraw_money()
 
     getch();
 }
+//!---------------------------------------------------------
+
+void transfer_money()
+{
+
+    time_t tm;
+    time(&tm);
+    FILE *ptr = fopen("Account.txt", "a");
+    printf("*****TRANSFERRING MONEY*****\n");
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+
+    printf("\nEnter the account no. in which you want to transfer the money : ");
+    scanf("%d", &ac);
+    printf("\nEnter the amount you want to transfer\n");
+    scanf("%d", &trans_amt);
+
+    if (amt < trans_amt)
+    {
+        printf("****You have not sufficient balance****\n");
+    }
+    else
+    {
+        amt = amt - trans_amt;
+        printf("****Money Transferred****\n");
+        printf("Current balance : %d\n", amt);
+        fprintf(ptr, "\nRs%d had been transferred from your account to %d\n", trans_amt, ac);
+        fprintf(ptr, "Date/Time of transaction :  %s\n", ctime(&tm));
+        count++;
+    }
+    fclose(ptr);
+    printf("Press any key....\n");
+    getch();
+}
+
+//!---------------------------------------------------------
