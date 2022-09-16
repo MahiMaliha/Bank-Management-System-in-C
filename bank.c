@@ -210,3 +210,31 @@ void checkDetail()
 }
 
 //!---------------------------------------------------------
+void transaction_details()
+{
+
+    system("cls");
+
+    FILE *ptr;
+    ptr = fopen("Account.txt", "r");
+    char c = fgetc(ptr);
+    if (c == EOF)
+    {
+        printf("TRANSACTION DETAILS\n");
+        divider();
+        printf("\n*******NO RECENT TRANSACTION*******\n");
+    }
+    else
+    {
+        printf("TRANSACTION DETAILS\n");
+        divider();
+        printf("\n%d transactions have been made from your account \n", count);
+        while (c != EOF) // EOF=End of file
+        {
+            printf("%c", c);
+            c = fgetc(ptr);
+        }
+    }
+
+    getch();
+}
