@@ -78,3 +78,19 @@ int main()
 
     return 0;
 }
+void menu()
+{
+
+    system("cls");
+    divider();
+    printf("\n\tMENU\n");
+
+    divider();
+    printf("\n1.Deposit Money\n");
+    printf("2.Withdraw Money\n");
+    printf("3.Transfer Money\n");
+    printf("4.Account details\n");
+    printf("5.Transaction details\n");
+    printf("6.Exit\n");
+    divider();
+}
