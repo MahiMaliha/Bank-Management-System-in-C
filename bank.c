@@ -122,3 +122,36 @@ void deposit_money()
 }
 
 //!---------------------------------------------------------
+void withdraw_money()
+{
+
+    time_t tm;
+    time(&tm);
+    FILE *ptr = fopen("Account.txt", "a");
+    printf("*****WITHDRAWING MONEY*****\n");
+    for (int i = 0; i < 50; i++)
+    {
+        printf("-");
+    }
+
+    printf("\nEnter the amount you want to withdraw\n");
+    scanf("%d", &with_amt);
+
+    if (amt < with_amt)
+    {
+        printf("****Insufficient balance****\n");
+    }
+    else
+    {
+        amt = amt - with_amt;
+        printf("*****Money withdrawn*****\n");
+        printf("Current balance : %d\n", amt);
+        fprintf(ptr, "\nRs%d had been withdrawn from your account \n", with_amt);
+        fprintf(ptr, "Date/Time of transaction :  %s\n", ctime(&tm));
+        count++;
+    }
+    fclose(ptr);
+    printf("Press any key....\n");
+
+    getch();
+}
